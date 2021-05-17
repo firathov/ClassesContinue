@@ -82,9 +82,9 @@ namespace Class2_hw2
 
 
 
-        public decimal Percent(int years, decimal sum)
+        public decimal Percent(DateTime data, decimal sum)
         {
-            
+            int years = DateTime.Now.Year - data.Year;
             for (int i = 0; i < years; i++)
             {
                 sum += sum * 0.08M;
@@ -118,9 +118,9 @@ namespace Class2_hw2
         {
             Console.WriteLine($"Баланс при открытии счёта {sum}");
         }
-        public void SumAfterPercent(decimal sum, int years)
+        public void SumAfterPercent(decimal sum, DateTime data)
         {
-            Console.WriteLine($"Ваш баланс {sum} за {years} год");
+            Console.WriteLine($"Ваш баланс {sum} с {data.ToString("D")}");
         }
         public void SumAfterCash (decimal sum)
         {
@@ -153,18 +153,18 @@ namespace Class2_hw2
         {
             
         }
-        public decimal Percent2 (int years, decimal sum2)
+        public decimal Percent2 (DateTime data, decimal sum2)
         {
-            
+            int years = DateTime.Now.Year - data.Year;
             for (int i = 0; i < years; i++)
             {
                 sum2 += sum2 * 0.08M;
             }
             return sum2;
         }
-        public void SumAfterPercent2 (int years, decimal sum2)
+        public void SumAfterPercent2 (DateTime data, decimal sum2)
         {
-            Console.WriteLine($"Ваш баланс {sum2} за {years} год");
+            Console.WriteLine($"Ваш баланс {sum2} с {data.ToString("D")}");
         }
     }
 
@@ -177,14 +177,13 @@ namespace Class2_hw2
             DateTime data = new DateTime(2020, 05, 16);
             decimal number = 3880009812321454;
             Account account = new Account(sum, number, data);
-
-            int years = DateTime.Now.Year - data.Year;
+            
             string accType = "Физичекий счёт";
             Console.WriteLine($"\n{accType}");
             IndividualAccount individual = new IndividualAccount(sum, number, data, accType);
             individual.AccSum(sum);
-            sum = individual.Percent(years, sum);
-            individual.SumAfterPercent(sum, years);
+            sum = individual.Percent(data, sum);
+            individual.SumAfterPercent(sum, data);
             sum = individual.CashOut(sum);
             individual.SumAfterCash(sum);
 
@@ -194,8 +193,8 @@ namespace Class2_hw2
             decimal number2 = 3242342231231321;
             DateTime data2 = new DateTime(2019, 06, 30);
             Entity entity = new Entity(sum2, number2, data2);
-            sum = entity.Percent2(years, sum2);
-            entity.SumAfterPercent2(years, sum);
+            sum = entity.Percent2(data, sum2);
+            entity.SumAfterPercent2(data, sum);
 
             Console.ReadKey();
         }
