@@ -361,9 +361,9 @@ namespace Class_hw1
                         surnameCompare = true;
                     }
                 }
-                if (humanSurname.Length < 3)
+                if (humanSurname.Length < 1)
                 {
-                    Console.WriteLine("Имя не может быть меньше 3 трёх букв, попробуйте ещё");
+                    Console.WriteLine("Имя не может быть меньше 1 трёх букв, попробуйте ещё");
                     surnameCompare = false;
                 }
 
