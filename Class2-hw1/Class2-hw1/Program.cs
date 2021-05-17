@@ -135,7 +135,7 @@ namespace Class_hw1
                     case 1:
                         {
                             Console.WriteLine("Чтобы добавить студента, введите его/её фамилию");
-                            string surname = forSurnameCheck();
+                            string surname = ForSurnameCheck();
                             Console.WriteLine("Введите курс");
                             int course = forCourseCheck();
                             Console.WriteLine("Введите номер зачетной книги");
@@ -148,13 +148,13 @@ namespace Class_hw1
                     case 2:
                         {
                             Console.WriteLine("Чтобы добавить аспиранта, введите его/её фамилию");
-                            string surname = forSurnameCheck();
+                            string surname = ForSurnameCheck();
                             Console.WriteLine("Введите курс");
                             int course = forCourseCheck();
                             Console.WriteLine("Введите номер зачетной книги");
                             int gradeBook = ForGradeBookCheck();
                             Console.WriteLine("Введите название презентации");
-                            string slideShow = forSurnameCheck();
+                            string slideShow = ForSurnameCheck();
                             aspirant[aspirantCounter] = new Aspirant { Surname = surname, Course = course, GradeBook = gradeBook, SlideShow = slideShow };
                             aspirantCounter++;
                             Console.WriteLine("\nНажимайте на любую клавишу\n");
@@ -337,9 +337,44 @@ namespace Class_hw1
             Console.WriteLine("11)Exit");
         }
 
-        public static bool checkerFirstPerson = true;
-       
-        static string forSurnameCheck()
+        public static bool surnameCompare = true;
+
+        //public static string CheckerSurname()
+        //{
+        //    do
+        //    {
+        //        string personName = Convert.ToString(Console.ReadLine());
+
+        //        for (int i = 0; i < personName.Length; i++)
+        //        {
+        //            char element = personName[i];
+
+        //            if (!Char.IsLetter(element))
+        //            {
+        //                checkerName = false;
+        //                Console.Write("Incorrect name type, please enter correct name: ");
+        //                break;
+        //            }
+        //            else
+        //            {
+        //                checkerName = true;
+        //            }
+        //        }
+
+        //        NameForCompare = personName;
+
+        //        if (NameForCompare.Length < 3)
+        //        {
+        //            Console.Write("Name cannot be less than 2 letters or empty result\nEnter surname: ");
+        //            checkerName = false;
+        //        }
+        //    }
+        //    while (checkerName == false);
+
+        //    return NameForCompare;
+        //}
+
+        static string ForSurnameCheck()
         {
             string humanSurname;
             do
@@ -352,19 +387,24 @@ namespace Class_hw1
 
                     if (!Char.IsLetter(element))
                     {
-                        checkerFirstPerson = false;
+                        surnameCompare = false;
                         Console.Write("Вы ввели неправильный символ, попробуйте ещё: ");
                         break;
                     }
                     else
                     {
-                        checkerFirstPerson = true;
+                        surnameCompare = true;
                     }
+                }
+                if (humanSurname.Length < 3)
+                {
+                    Console.WriteLine("Имя не может быть меньше 3 трёх букв, попробуйте ещё");
+                    surnameCompare = false;
                 }
 
                 
             }
-            while (checkerFirstPerson == false);
+            while (surnameCompare == false);
             return humanSurname;
         }
 

@@ -1,13 +1,8 @@
 ﻿<Properties StartupConfiguration="{1B29EDE7-0104-4D8A-A2DB-90AB63243E04}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Class2-hw1/Program.cs">
     <Files>
-      <File FileName="Class2-hw1/Program.cs" Line="297" Column="24" />
+      <File FileName="Class2-hw1/Program.cs" Line="138" Column="47" />
     </Files>
-    <Pads>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
