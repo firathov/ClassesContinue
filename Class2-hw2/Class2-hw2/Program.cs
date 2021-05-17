@@ -80,7 +80,27 @@ namespace Class2_hw2
             this.accType = accType;
         }
 
+        public void AccTyper()
+        {
+            Console.WriteLine("Укажите тип счёта:\n1) Дебетовый\n2)Кредитный\n3)Депозитный\n");
+            int switcher = forNumberCheck();
+            switch (switcher)
+            {
+                case 1:
+                    Console.WriteLine("Ваш счёт дебетовый\n");
+                    Console.WriteLine("--------------------\n");
+                    break;
+                case 2:
+                    Console.WriteLine("Ваш счёт кредитный\n");
+                    Console.WriteLine("--------------------\n");
+                    break;
+                case 3:
+                    Console.WriteLine("Ваш счёт депозитный\n");
+                    Console.WriteLine("--------------------\n");
+                    break;
 
+            }
+        }
 
         public decimal Percent(DateTime data, decimal sum)
         {
@@ -177,10 +197,11 @@ namespace Class2_hw2
             DateTime data = new DateTime(2020, 05, 16);
             decimal number = 3880009812321454;
             Account account = new Account(sum, number, data);
-            
-            string accType = "Физичекий счёт";
+
+            string accType = "Физический счёт";
             Console.WriteLine($"\n{accType}");
             IndividualAccount individual = new IndividualAccount(sum, number, data, accType);
+            individual.AccTyper();
             individual.AccSum(sum);
             sum = individual.Percent(data, sum);
             individual.SumAfterPercent(sum, data);
