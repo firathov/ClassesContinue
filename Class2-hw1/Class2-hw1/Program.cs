@@ -128,7 +128,7 @@ namespace Class_hw1
             for (;;)
             {
                 Menu();
-                Console.WriteLine("Выбирайте номер");
+                Console.WriteLine("\nВыбирайте номер");
                 int switcher = forNumberCheck();
                 switch (switcher)
                 {
@@ -142,6 +142,7 @@ namespace Class_hw1
                             int gradeBook = ForGradeBookCheck();
                             student[studentCounter] = new Student { Surname = surname, Course = course, GradeBook = gradeBook };
                             studentCounter++;
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 2:
@@ -156,16 +157,19 @@ namespace Class_hw1
                             string slideShow = forSurnameCheck();
                             aspirant[aspirantCounter] = new Aspirant { Surname = surname, Course = course, GradeBook = gradeBook, SlideShow = slideShow };
                             aspirantCounter++;
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 3:
                         {
                             Console.WriteLine($"Количесто студентов: {studentCounter}");
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 4:
                         {
                             Console.WriteLine($"Количество аспирантов: {aspirantCounter}");
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 5:
@@ -186,6 +190,7 @@ namespace Class_hw1
                                     Console.WriteLine($"{i+1}) Фамилия - {human.Surname}, Курс - {human.Course}, Номер зачетной книги - {human.GradeBook}");
                                 }
                             }
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 6:
@@ -206,6 +211,7 @@ namespace Class_hw1
                                     Console.WriteLine($"{i+1}) Фамилия - {human.Surname}, Курс - {human.Course},Номер зачетной книги - {human.GradeBook}, Название презентации - {human.SlideShow}");
                                 }
                             }
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 7:
@@ -213,11 +219,21 @@ namespace Class_hw1
                             if (studentCounter == 0)
                             {
                                 Console.WriteLine("Студентов нет");
+                                Console.WriteLine("\nНажимайте на любую клавишу\n");
+                                break;
                             }
                             Console.WriteLine("Для вывода студента, введите порядковый номер");
                             int studentIndex = forNumberCheck() - 1;
-                            Student human2 = student[studentIndex];
-                            Console.WriteLine($"Фамилия - {human2.Surname}, Курс - {human2.Course},Номер зачетной книги - {human2.GradeBook}");
+                            if (studentIndex >= studentCounter)
+                            {
+                                Console.WriteLine("Такого студента у нас нет");
+                            }
+                            else
+                            {
+                                Student human2 = student[studentIndex];
+                                Console.WriteLine($"Фамилия - {human2.Surname}, Курс - {human2.Course},Номер зачетной книги - {human2.GradeBook}");
+                            }
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 8:
@@ -225,11 +241,21 @@ namespace Class_hw1
                             if (aspirantCounter == 0)
                             {
                                 Console.WriteLine("Аспирантов нет");
+                                Console.WriteLine("\nНажимайте на любую клавишу\n");
+                                break;
                             }
                             Console.WriteLine("Для вывода аспиранта, введите порядковый номер");
                             int aspirantIndex = forNumberCheck() - 1;
-                            Aspirant human4 = (Aspirant)aspirant[aspirantIndex];
-                            Console.WriteLine($"Фамилия - {human4.Surname}, Курс - {human4.Course},Номер зачетной книги - {human4.GradeBook}, Название презентации - {human4.SlideShow}");
+                            if (aspirantIndex >= aspirantCounter)
+                            {
+                                Console.WriteLine("У нас нет такого аспиранта");
+                            }
+                            else
+                            {
+                                Aspirant human4 = (Aspirant)aspirant[aspirantIndex];
+                                Console.WriteLine($"Фамилия - {human4.Surname}, Курс - {human4.Course},Номер зачетной книги - {human4.GradeBook}, Название презентации - {human4.SlideShow}");
+                            }
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 9:
@@ -237,12 +263,24 @@ namespace Class_hw1
                             if (studentCounter == 0)
                             {
                                 Console.WriteLine("Студентов нет");
+                                Console.WriteLine("\nНажимайте на любую клавишу\n");
+                                break;
                             }
                             Console.WriteLine("Для удаления студента, введите его порядковый номер");
                             int deletteStudent = forNumberCheck() - 1;
-                            Student human3 = student[deletteStudent];
-                            Console.WriteLine($"Студент {human3.Surname} под порядковым номером {deletteStudent+1} удалён");
-                            student[deletteStudent] = null;
+                            if (deletteStudent >= studentCounter)
+                            {
+                                Console.WriteLine("У нас нет такого студента");
+                                Console.WriteLine("\nНажимайте на любую клавишу\n");
+                                break;
+                            }
+                            else
+                            {
+                                Student human3 = student[deletteStudent];
+                                Console.WriteLine($"Студент {human3.Surname} под порядковым номером {deletteStudent+1} удалён");
+                                student[deletteStudent] = null;
+                            }
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 10:
@@ -250,12 +288,22 @@ namespace Class_hw1
                             if (aspirantCounter == 0)
                             {
                                 Console.WriteLine("Аспирантов нет");
+                                Console.WriteLine("\nНажимайте на любую клавишу\n");
+                                break;
                             }
                             Console.WriteLine("Для удаления аспиранта, введите его порядковый номер");
                             int deletteAspirant = forNumberCheck() - 1;
-                            Aspirant human5 = (Aspirant)aspirant[deletteAspirant];
-                            Console.WriteLine($"Аспирант {human5.Surname} под порядковым номером {deletteAspirant + 1} удалён");
-                            aspirant[deletteAspirant] = null;
+                            if (deletteAspirant >= aspirantCounter)
+                            {
+                                Console.WriteLine("У нас нет такого аспиранта");
+                            }
+                            else
+                            {
+                                Aspirant human5 = (Aspirant)aspirant[deletteAspirant];
+                                Console.WriteLine($"Аспирант {human5.Surname} под порядковым номером {deletteAspirant + 1} удалён");
+                                aspirant[deletteAspirant] = null;
+                            }
+                            Console.WriteLine("\nНажимайте на любую клавишу\n");
                             break;
                         }
                     case 11:

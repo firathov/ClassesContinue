@@ -1,0 +1,12 @@
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/bin/Debug/netcoreapp3.1/Class2-hw2.deps.json
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/bin/Debug/netcoreapp3.1/Class2-hw2.runtimeconfig.json
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/bin/Debug/netcoreapp3.1/Class2-hw2.runtimeconfig.dev.json
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/bin/Debug/netcoreapp3.1/Class2-hw2.dll
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/bin/Debug/netcoreapp3.1/Class2-hw2.pdb
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.csprojAssemblyReference.cache
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.AssemblyInfoInputs.cache
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.AssemblyInfo.cs
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.csproj.CoreCompileInputs.cache
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.dll
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.pdb
+/Users/firat/Documents/Classes2/Class2-hw2/Class2-hw2/obj/Debug/netcoreapp3.1/Class2-hw2.genruntimeconfig.cache
