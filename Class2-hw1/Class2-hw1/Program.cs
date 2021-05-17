@@ -339,41 +339,6 @@ namespace Class_hw1
 
         public static bool surnameCompare = true;
 
-        //public static string CheckerSurname()
-        //{
-        //    do
-        //    {
-        //        string personName = Convert.ToString(Console.ReadLine());
-
-        //        for (int i = 0; i < personName.Length; i++)
-        //        {
-        //            char element = personName[i];
-
-        //            if (!Char.IsLetter(element))
-        //            {
-        //                checkerName = false;
-        //                Console.Write("Incorrect name type, please enter correct name: ");
-        //                break;
-        //            }
-        //            else
-        //            {
-        //                checkerName = true;
-        //            }
-        //        }
-
-        //        NameForCompare = personName;
-
-        //        if (NameForCompare.Length < 3)
-        //        {
-        //            Console.Write("Name cannot be less than 2 letters or empty result\nEnter surname: ");
-        //            checkerName = false;
-        //        }
-        //    }
-        //    while (checkerName == false);
-
-        //    return NameForCompare;
-        //}
-
         static string ForSurnameCheck()
         {
             string humanSurname;
